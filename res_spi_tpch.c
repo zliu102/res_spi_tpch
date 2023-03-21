@@ -14,7 +14,7 @@
 
 #include "postgres.h"
 
-#include "res_spi.h"
+#include "res_spi_tpch.h"
 
 #include "c.h"
 #include "catalog/pg_collation_d.h"
@@ -281,9 +281,9 @@ prepTuplestoreResult(FunctionCallInfo fcinfo)
     rsinfo->setDesc = NULL;
 }
 
-PG_FUNCTION_INFO_V1(reservoir_sampler);
+PG_FUNCTION_INFO_V1(reservoir_sampler_tpch);
 Datum
-reservoir_sampler(PG_FUNCTION_ARGS)
+reservoir_sampler_tpch(PG_FUNCTION_ARGS)
 {
     int ret;
     int row;
@@ -423,9 +423,9 @@ reservoir_sampler(PG_FUNCTION_ARGS)
 
 
 
-PG_FUNCTION_INFO_V1(reservoir_sampler2);
+PG_FUNCTION_INFO_V1(reservoir_sampler2_tpch);
 Datum
-reservoir_sampler2(PG_FUNCTION_ARGS)
+reservoir_sampler2_tpch(PG_FUNCTION_ARGS)
 {
     int ret;
     int row;
