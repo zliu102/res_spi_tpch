@@ -324,7 +324,7 @@ reservoir_sampler_tpch(PG_FUNCTION_ARGS)
     //tupdesc = SPI_tuptable->tupdesc;
     tupdesc = CreateTemplateTupleDesc(3, false);
     TupleDescInitEntry(tupdesc, (AttrNumber) 1, "l_partkey", INT4OID, -1, 0);
-    TupleDescInitEntry(tupdesc, (AttrNumber) 1, "l_discount", NUMERICOID, -1, 0);
+    TupleDescInitEntry(tupdesc, (AttrNumber) 1, "l_extendedprice", NUMERICOID, -1, 0);
     TupleDescInitEntry(tupdesc, (AttrNumber) 1, "l_tax", NUMERICOID, -1, 0);
     oldcontext = MemoryContextSwitchTo(rsinfo->econtext->ecxt_per_query_memory);
     tupstore = tuplestore_begin_heap(true, false, work_mem);
@@ -341,7 +341,7 @@ reservoir_sampler_tpch(PG_FUNCTION_ARGS)
     for(row = 0; row < SPI_processed; row++){
      
         int attnum1 = SPI_fnumber(SPI_tuptable->tupdesc, "l_partkey");
-        int attnum2 = SPI_fnumber(SPI_tuptable->tupdesc, "l_discount");
+        int attnum2 = SPI_fnumber(SPI_tuptable->tupdesc, "l_extendedprice");
         char* value1 = SPI_getvalue((SPI_tuptable->vals)[row], SPI_tuptable->tupdesc, attnum1);
         char* value2 = SPI_getvalue((SPI_tuptable->vals)[row], SPI_tuptable->tupdesc, attnum2);
         char *current_group = strcat(value1, ",");
