@@ -347,7 +347,7 @@ reservoir_sampler_tpch(PG_FUNCTION_ARGS)
     for(row = 0; row < SPI_processed; row++){
      
         int attnum1 = SPI_fnumber(SPI_tuptable->tupdesc, "l_suppkey");
-        int attnum2 = SPI_fnumber(SPI_tuptable->tupdesc, "l_linenumber");
+        int attnum2 = SPI_fnumber(SPI_tuptable->tupdesc, "l_discount");
         char* value1 = SPI_getvalue((SPI_tuptable->vals)[row], SPI_tuptable->tupdesc, attnum1);
         char* value2 = SPI_getvalue((SPI_tuptable->vals)[row], SPI_tuptable->tupdesc, attnum2);
         char *current_group = strcat(value1, ",");
