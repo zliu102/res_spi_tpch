@@ -29,16 +29,16 @@ LANGUAGE C STRICT;
 
 
 
-/*
+
 CREATE FUNCTION reservoir_sampler_tpch(sampleSize bigint, tablename text, otherAttribue text,groupby text) 
-RETURNS TABLE (l_suppkey int, l_returnflag_int int, l_tax numeric, l_quantity int, l_partkey int, l_orderkey int, l_extendedprice int, l_discount numeric, l_linenumber int) 
+RETURNS TABLE (l_suppkey int, l_tax numeric, l_quantity int, l_partkey int, l_orderkey int, l_extendedprice int, l_discount numeric, l_linenumber int) 
 AS 'MODULE_PATHNAME','reservoir_sampler_tpch' 
 LANGUAGE C STRICT;
-*/
+/*
 CREATE FUNCTION reservoir_sampler_tpch(sampleSize bigint, tablename text, otherAttribue text,groupby text) 
 RETURNS TABLE (l_suppkey int, l_returnflag_int int, l_quantity int) 
 AS 'MODULE_PATHNAME','reservoir_sampler_tpch' 
-LANGUAGE C STRICT;
+LANGUAGE C STRICT;*/
 
 CREATE FUNCTION reservoir_sampler2_tpch(sampleSize int, tablename text, otherAttribue text,groupby text) 
 RETURNS TABLE (b int, c int, a int[]) 
